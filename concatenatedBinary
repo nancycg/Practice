@@ -1,0 +1,25 @@
+import java.math.BigInteger;
+
+class SolutionNew {
+
+    public static BigInteger mod = new BigInteger(String.valueOf(1000000007));
+
+    public int concatenatedBinary(int n) {
+        BigInteger result;
+        String binaryStr = "";
+
+        // concatenating all binary values till n
+        for(int i = 1;i <=n;i++)
+            binaryStr +=  Integer.toBinaryString(i);
+
+        result = new BigInteger(binaryStr,2);
+        BigInteger res = result.mod(mod);
+        return res.intValue();
+
+    }
+
+    public static void main(String[] args) {
+        SolutionNew obj = new SolutionNew();
+        System.out.println(obj.concatenatedBinary(9511));
+    }
+}
